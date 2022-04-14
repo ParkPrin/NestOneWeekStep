@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class StringTestReq1 {
 
 	// Given
-	final String splitSampleData = "1,2" ;
+	final String sampleData = "1,2";
 	/**
 	 * 요구사항 1
 	 * "1,2"을 , 로 split 했을 때 1과 2로 잘 분리되는지 확인하는 학습 테스트를 구현한다.
@@ -23,7 +23,7 @@ public class StringTestReq1 {
 	@Test
 	public void reqCase1(){
 		// When
-		final String[] split = splitSampleData.split(",");
+		final String[] split = sampleData.split(",");
 
 		// Then
 		assertThat(split).contains("1", "2");
@@ -33,17 +33,17 @@ public class StringTestReq1 {
 	@Test
 	public void reqCase2(){
 		// When
-		final String[] split = splitSampleData.split(",");
+		final String[] split = sampleData.split(",");
 
 		// Then
 		assertThat(split).contains("1");
 	}
 
-	@DisplayName("String 클래스 중 split 메소드 학습 - 결과순서 O")
+	@DisplayName("String 클래스 중 split 메소드 학습 - 결과순서 ")
 	@Test
 	public void reqCase3(){
 		// When
-		final String[] split = splitSampleData.split(",");
+		final String[] split = sampleData.split(",");
 
 		// Then
 		assertThat(split).containsExactly("1", "2");
