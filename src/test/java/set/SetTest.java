@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class SetTest {
@@ -50,6 +51,14 @@ public class SetTest {
     public void reqCase2(int number){
         // Then
         assertThat(numbers.contains(number)).isTrue();
+    }
+
+    @DisplayName("Set의 contains()를 활용한 값이 존재하는지 확인하는 테스트, 입력값에 따라 값이 다른경우에도 동작하도록 구현")
+    @ParameterizedTest
+    @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
+    public void reqCase3(int number, boolean expected){
+        // Then
+        assertEquals(numbers.contains(number), expected);
     }
 
 }
